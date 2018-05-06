@@ -255,12 +255,12 @@ Pulley.prototype.update = function (muStat, muKin, allowMotion, secStep, gravity
 			this.hooked.x += secStep*this.hooked.vx*ppm;
 			this.hooked.y += secStep*this.hooked.vy*ppm;
 			this.hanging.y += -secStep*ppm*Math.sign(this.hooked.vx)*Math.sqrt(this.hooked.vx*this.hooked.vx+this.hooked.vy*this.hooked.vy);
-			console.log(Math.sin(this.hooked.vx));
-			console.log(this.hanging.y, "hanging y");
+			//console.log(Math.sin(this.hooked.vx));
+			//console.log(this.hanging.y, "hanging y");
 			this.hanging.cForces[0] = new Vector(0,-this.hanging.mass*(-this.hanging.ay + gravity), "Blue");
 			this.hooked.cForces[0] = new Vector(this.hanging.cForces[0].y*cos, this.hanging.cForces[0].y*sin, "Blue");
 			//console.log(-this.hanging.gForce.y,cos ,this.hooked.sFriction.x,this.hooked.sumApplied.x,this.hooked.nForce.x,this.hanging.mass, this.hooked.mass, this.hooked.ay);
-			console.log(this.hooked.vx, this.hooked.vy);
+			//console.log(this.hooked.vx, this.hooked.vy);
 		}
 		
 		//var ax = (-this.hanging.gForce*Math.cos(this.hooked.theta)+this.hooked.sFriction.x
