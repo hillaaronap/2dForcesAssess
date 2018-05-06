@@ -703,14 +703,7 @@
    
    
    
-   
-   
-   function initiateListeners(){
-   document.getElementsByClassName("close")[0].addEventListener('click',function(){
-		modal.style.display = "none";
-	},false);
-    // play, reload, switch diagrams (via clicking box)
-	canvas.addEventListener('click', function(){
+   function clickFunction01(event){
 	 if(!isPlaying){
 	  if(event.pageY>20 && event.pageY <50){
 	   if(event.pageX >20 && event.pageX <70){
@@ -741,7 +734,15 @@
 	   }
 	  }
 	 }
-	}, false);
+	}
+   
+   function initiateListeners(){
+   document.getElementsByClassName("close")[0].addEventListener('click',function(){
+		modal.style.display = "none";
+	},false);
+    // play, reload, switch diagrams (via clicking box)
+	canvas.addEventListener('click', clickFunction01, false);
+	
 	
 	if(typeof crates[0]!= 'undefined'){
 	 crates[0].diagram.canvas.addEventListener('click', function(){
